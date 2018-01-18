@@ -3,7 +3,7 @@
 
         <h1>{{ title }} </h1>
 
-        <p>Meu primeiro paragrafo</p>
+        <p>Meu primeiro scoped paragrafo</p>
 
         <ninjas></ninjas>
 
@@ -22,6 +22,9 @@
          }
      }
 </script>
-<style>
+<style scoped>
+    h1 {
+        color: purple;
+    }
 
 </style>
