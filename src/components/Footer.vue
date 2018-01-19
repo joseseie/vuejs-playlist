@@ -7,12 +7,19 @@
     </footer>
 </template>
 <script>
+    import { bus } from '../main'
     export default {
         props: ['title'],
         data() {
             return {
                 copyrigt: 'Cotyright 2017 Vuw'
             }
+        },
+        created() {
+            bus.$on('titleChanged',(data) => {
+                alert('Changed...')
+                this.title = data
+            })
         }
     }
 </script>

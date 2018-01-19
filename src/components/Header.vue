@@ -6,6 +6,7 @@
     </header>
 </template>
 <script>
+    import { bus } from '../main'
     export default {
         props: ['title'],
         data() {
@@ -15,7 +16,9 @@
         },
         methods: {
             changeTitle() {
-                this.$emit('changeTitle','Change title in parent')
+//                this.$emit('changeTitle','Change title in parent')
+                this.title = 'Change title in Header'
+                bus.$emit('titleChanged',this.title);
             }
         }
     }
