@@ -1,6 +1,14 @@
 <template>
     <div>
 
+        <!--O <keepalive> mantem os dados do formulario sempre disponivel-->
+        <keep-alive>
+            <component v-bind:is="component"></component>
+        </keep-alive>
+        <button @click="component = 'form-two'">Show form Two</button>
+        <button @click="component = 'form-one'">Show form one</button>
+
+
         <form-helper>
 
             <div slot="form-header">
@@ -17,6 +25,7 @@
             </div>
         </form-helper>
 
+
         <!--<app-header v-bind:title="title" @changeTitle="changeTitle($event)"></app-header>-->
 
         <!--<ninjas v-bind:ninjas="ninjas"></ninjas>-->
@@ -31,16 +40,23 @@
     import Footer from './components/Footer.vue'
     import FormHelper from './components/FormHelper.vue'
 
-     export default {
+    import FormOne from './components/FormOne.vue'
+    import FormTwo from './components/FormTwo.vue'
+
+
+    export default {
         components: {
             'ninjas' : Ninjas,
             'app-header' : Header,
             'app-footer' : Footer,
-            'form-helper' : FormHelper
+            'form-helper' : FormHelper,
+            'form-one' : FormOne,
+            'form-two' : FormTwo
         },
          data() {
              return {
                  title: "Ninja App",
+                 component: 'form-two',
                  ninjas: [
                      {name: 'Rye', specialiity: 'Vue Component',show: false},
                      {name: 'Crystal', specialiity: 'HTML Wizard',show: false},
