@@ -1,12 +1,16 @@
 <template>
     <div>
 
+        <form-helper>
+            <h1 slot="title">{{ title }}</h1>
+            <p slot="text">Inserindo um paragrafo no slot</p>
+        </form-helper>
 
-        <app-header v-bind:title="title" @changeTitle="changeTitle($event)"></app-header>
+        <!--<app-header v-bind:title="title" @changeTitle="changeTitle($event)"></app-header>-->
 
-        <ninjas v-bind:ninjas="ninjas"></ninjas>
+        <!--<ninjas v-bind:ninjas="ninjas"></ninjas>-->
 
-        <app-footer v-bind:title="title"></app-footer>
+        <!--<app-footer v-bind:title="title"></app-footer>-->
 
     </div>
 </template>
@@ -14,12 +18,14 @@
     import Ninjas from './Ninjas.vue'
     import Header from './components/Header.vue'
     import Footer from './components/Footer.vue'
+    import FormHelper from './components/FormHelper.vue'
 
      export default {
         components: {
             'ninjas' : Ninjas,
             'app-header' : Header,
-            'app-footer' : Footer
+            'app-footer' : Footer,
+            'form-helper' : FormHelper
         },
          data() {
              return {
