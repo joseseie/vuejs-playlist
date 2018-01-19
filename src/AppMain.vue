@@ -2,11 +2,11 @@
     <div>
 
 
-        <app-header></app-header>
+        <app-header v-bind:title="title" @changeTitle="changeTitle($event)"></app-header>
 
-        <ninjas></ninjas>
+        <ninjas v-bind:ninjas="ninjas"></ninjas>
 
-        <app-footer></app-footer>
+        <app-footer v-bind:title="title"></app-footer>
 
     </div>
 </template>
@@ -24,7 +24,21 @@
          data() {
              return {
                  title: "Ninja App",
+                 ninjas: [
+                     {name: 'Rye', specialiity: 'Vue Component',show: false},
+                     {name: 'Crystal', specialiity: 'HTML Wizard',show: false},
+                     {name: 'Hitoshi', specialiity: 'Click Events',show: false},
+                     {name: 'Tango', specialiity: 'Conditions',show: false},
+                     {name: 'Kami', specialiity: 'Webpack',show: false},
+                     {name: 'Yoshi', specialiity: 'Data Diggin',show: false},
+                     {name: 'Marcos', specialiity: 'Vuex',show: false},
+                 ]
              }
+         },
+         methods: {
+             changeTitle(title) {
+                 this.title = title
+         }
          }
      }
 </script>

@@ -4,9 +4,9 @@
         <h1>{{ title }} </h1>
 
         <ul>
-            <li v-for="ninja in ninjas">Name: {{ ninja.name }},
-            <br>
-                <span v-if="ninja.show">Speciality: {{ ninja.specialiity }}</span>
+            <li v-for="ninja in ninjas" @click="ninja.show = !ninja.show">
+                <h3> Name: {{ ninja.name }} </h3>
+                <h4 v-if="ninja.show">Speciality: {{ ninja.specialiity }}</h4>
             </li>
         </ul>
 
@@ -14,18 +14,10 @@
 </template>
 <script>
  export default {
+     props: ['ninjas'],
      data() {
          return {
              title: "Ninja Componet",
-             ninjas: [
-                 {name: 'Rye', specialiity: 'Vue Component',show: false},
-                 {name: 'Crystal', specialiity: 'HTML Wizard',show: false},
-                 {name: 'Hitoshi', specialiity: 'Click Events',show: false},
-                 {name: 'Tango', specialiity: 'Conditions',show: false},
-                 {name: 'Kami', specialiity: 'Webpack',show: false},
-                 {name: 'Yoshi', specialiity: 'Data Diggin',show: false},
-                 {name: 'Marcos', specialiity: 'Vuex',show: false},
-             ]
 
          }
      }

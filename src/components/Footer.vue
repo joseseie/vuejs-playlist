@@ -1,13 +1,14 @@
 <template>
     <footer>
 
-        <p>Footer added</p>
+        <p>TItle of Footer: {{ title }} </p>
         <p>{{ copyrigt }}</p>
 
     </footer>
 </template>
 <script>
     export default {
+        props: ['title'],
         data() {
             return {
                 copyrigt: 'Cotyright 2017 Vuw'
