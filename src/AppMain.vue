@@ -1,6 +1,7 @@
 <template>
     <div>
-        <show-blog></show-blog>
+        <!--<show-blog></show-blog>-->
+        <provinces></provinces>
         <!--O <keepalive> mantem os dados do formulario sempre disponivel-->
         <!--<keep-alive>-->
             <!--<component v-bind:is="component"></component>-->
@@ -44,6 +45,7 @@
     import FormTwo from './components/FormTwo.vue'
 
     import ShowBlog from './components/showBlog.vue'
+    import ShowProvinces from './components/Provincias.vue'
 
 
     export default {
@@ -55,6 +57,7 @@
             'form-one' : FormOne,
             'form-two' : FormTwo,
             'show-blog' : ShowBlog,
+            'provinces' : ShowProvinces,
         },
          data() {
              return {

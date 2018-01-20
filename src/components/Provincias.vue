@@ -1,10 +1,11 @@
 <template>
     <div v-theme="'narrow'" id="show-blogs">
-        <h1>All blog articles</h1>
-        <input type="text" v-model="search" placeholder="Search Blogs"/>
-        <div v-for="blog in filterBlogs" class="single-blog">
-            <h2 v-rainbow>{{ blog.title | toUpperCase }} </h2>
-            <article>{{ blog.body | snipped }} </article>
+        <h1>Todas Provincias</h1>
+        <input type="text" v-model="search" placeholder="Search Provinces"/>
+        <div v-for="p in filterProvinces" class="single-blog">
+            <h2 v-rainbow>Tipo: {{ p.description | toUpperCase }} </h2>
+            <article>Nome da {{ p.description }}: {{ p.name  }} </article>
+            {{ p }}
         </div>
     </div>
 </template>
@@ -12,26 +13,27 @@
     export default {
         data() {
             return {
-                blogs: [],
+                provinces: [],
                 search: '',
             }
         },
         created() {
             let vm = this;
 
-            axios.get('https://jsonplaceholder.typicode.com/posts').then(function (data) {
+            axios.get('http://apimoz.herokuapp.com/api/v1.0/provinces\n' +
+                '\t? key=bf82ec128a49240cea7d3635e6934382cef63859').then(function (data) {
 //                alert('blgs buscados com sucesso')
-                vm.blogs = data.data;
-//                console.log(vm.blogs)
+                vm.provinces = data.data.places;
+                console.log(vm.provinces)
             }).catch(function (error) {
                 console.log(error);
             });
 
         },
         computed: {
-            filterBlogs: function () {
-                return this.blogs.filter((blog)=> {
-                    return blog.title.match(this.search);
+            filterProvinces: function () {
+                return this.provinces.filter((province)=> {
+                    return province.name.toLowerCase().match(this.search.toLowerCase());
                 })
             }
         },

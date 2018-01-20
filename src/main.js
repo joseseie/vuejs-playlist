@@ -11,11 +11,6 @@ import AppMain from './AppMain.vue'
 export const bus = new Vue();
 
 //Custom directives
-Vue.directive('rainbow',{
-  bind(el,binding,vnode) {
-      el.style.color = "#" + Math.random().toString().slice(2,8);
-  }
-})
 
 Vue.directive('theme',{
   bind(el,binding,vnode) {
@@ -31,9 +26,9 @@ Vue.directive('theme',{
 })
 
 //Filters
-Vue.filter('to-uppercase',function (value) {
-    return value.toUpperCase();
-})
+// Vue.filter('to-uppercase',function (value) {
+//     return value.toUpperCase();
+// })
 
 Vue.filter('snipped',function (value) {
     return value.slice(0,100) + ' . . .'
