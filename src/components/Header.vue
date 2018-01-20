@@ -2,6 +2,7 @@
     <nav>
         <ul>
             <li><router-link to="/">Blog</router-link></li>
+            <li><router-link to="/add-blog">Add Blog</router-link></li>
             <li><router-link to="/provincias">Mostrar Provincias</router-link></li>
         </ul>
     </nav>
