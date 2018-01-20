@@ -7,6 +7,16 @@ window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 import Vue from 'vue'
 import App from './App.vue'
 import AppMain from './AppMain.vue'
+import VueRouter from 'vue-router'
+Vue.use(VueRouter)
+
+import Routes from './routes'
+
+//Routers
+const router = new VueRouter({
+  routes: Routes
+});
+
 
 export const bus = new Vue();
 
@@ -35,6 +45,7 @@ Vue.filter('snipped',function (value) {
 })
 
 new Vue({
-  el: '#app',
-  render: h => h(AppMain)
+    el: '#app',
+    render: h => h(AppMain),
+    router: router
 })

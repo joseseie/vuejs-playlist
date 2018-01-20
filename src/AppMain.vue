@@ -1,8 +1,9 @@
 <template>
     <div>
-        <show-blog></show-blog>
+        <router-view></router-view>
+        <!--<show-blog></show-blog>-->
         <!--<provinces></provinces>-->
-        <list-blog></list-blog>
+        <!--<list-blog></list-blog>-->
         <!--O <keepalive> mantem os dados do formulario sempre disponivel-->
         <!--<keep-alive>-->
             <!--<component v-bind:is="component"></component>-->
