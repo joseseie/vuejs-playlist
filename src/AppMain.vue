@@ -1,29 +1,29 @@
 <template>
     <div>
-
+        <show-blog></show-blog>
         <!--O <keepalive> mantem os dados do formulario sempre disponivel-->
-        <keep-alive>
-            <component v-bind:is="component"></component>
-        </keep-alive>
-        <button @click="component = 'form-two'">Show form Two</button>
-        <button @click="component = 'form-one'">Show form one</button>
-        <button @click="httpRequest">HTTP Request (Save)</button>
+        <!--<keep-alive>-->
+            <!--<component v-bind:is="component"></component>-->
+        <!--</keep-alive>-->
+        <!--<button @click="component = 'form-two'">Show form Two</button>-->
+        <!--<button @click="component = 'form-one'">Show form one</button>-->
+        <!--<button @click="httpRequest">HTTP Request (Save)</button>-->
 
-        <form-helper>
+        <!--<form-helper>-->
 
-            <div slot="form-header">
-                <h3>This is a title os the form</h3>
-                <p>Information about the form</p>
-            </div>
-            <div slot="form-fields">
-                <input type="text" placeholder="name" required/>
-                <input type="password" placeholder="password" required/>
+            <!--<div slot="form-header">-->
+                <!--<h3>This is a title os the form</h3>-->
+                <!--<p>Information about the form</p>-->
+            <!--</div>-->
+            <!--<div slot="form-fields">-->
+                <!--<input type="text" placeholder="name" required/>-->
+                <!--<input type="password" placeholder="password" required/>-->
 
-            </div>
-            <div slot="form-controls">
-                <button v-on:click="">Submit</button>
-            </div>
-        </form-helper>
+            <!--</div>-->
+            <!--<div slot="form-controls">-->
+                <!--<button v-on:click="">Submit</button>-->
+            <!--</div>-->
+        <!--</form-helper>-->
 
 
         <!--<app-header v-bind:title="title" @changeTitle="changeTitle($event)"></app-header>-->
@@ -43,6 +43,8 @@
     import FormOne from './components/FormOne.vue'
     import FormTwo from './components/FormTwo.vue'
 
+    import ShowBlog from './components/showBlog.vue'
+
 
     export default {
         components: {
@@ -51,7 +53,8 @@
             'app-footer' : Footer,
             'form-helper' : FormHelper,
             'form-one' : FormOne,
-            'form-two' : FormTwo
+            'form-two' : FormTwo,
+            'show-blog' : ShowBlog,
         },
          data() {
              return {
