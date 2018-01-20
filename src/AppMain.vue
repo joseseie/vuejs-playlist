@@ -7,7 +7,7 @@
         </keep-alive>
         <button @click="component = 'form-two'">Show form Two</button>
         <button @click="component = 'form-one'">Show form one</button>
-
+        <button @click="httpRequest">HTTP Request (Save)</button>
 
         <form-helper>
 
@@ -21,7 +21,7 @@
 
             </div>
             <div slot="form-controls">
-                <button v-on:click="handleSubmit">Submit</button>
+                <button v-on:click="">Submit</button>
             </div>
         </form-helper>
 
@@ -57,6 +57,7 @@
              return {
                  title: "Ninja App",
                  component: 'form-two',
+                 submited : false,
                  ninjas: [
                      {name: 'Rye', specialiity: 'Vue Component',show: false},
                      {name: 'Crystal', specialiity: 'HTML Wizard',show: false},
@@ -71,7 +72,18 @@
          methods: {
              changeTitle(title) {
                  this.title = title
-         }
+            },
+             httpRequest() {
+                 alert('Making http_request')
+                 this.$http.post('https://jsonplaceholder.typicode.com/posts',{
+                     title: "New Title",
+                     body: "sdffdg dffdfdgfd dfgdfgdfg dfg",
+                     userId: 1
+                 }).then(function (data) {
+                     console.log(data)
+                 })
+
+             }
          }
      }
 </script>
