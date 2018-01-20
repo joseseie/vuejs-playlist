@@ -1,5 +1,6 @@
 <template>
     <div>
+        <app-header></app-header>
         <router-view></router-view>
         <!--<show-blog></show-blog>-->
         <!--<provinces></provinces>-->
